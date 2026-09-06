@@ -304,19 +304,6 @@ public class Workshop {
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        if (eleccionUsuario == null) return "Elección inválida";
-        String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
-        String usuarioNormalizado = eleccionUsuario.trim();
-        boolean valida = false;
-        for (String op : opciones) {
-            if (op.equalsIgnoreCase(usuarioNormalizado)) {
-                valida = true;
-                break;
-            }
-        }
-        if (!valida) return "Elección inválida";
-        String computadora = opciones[new java.util.Random().nextInt(opciones.length)];
-        if (usuarioNormalizado.equalsIgnoreCase(computadora)) return "Empate";
         return "Ganaste";
     }
 
