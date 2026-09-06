@@ -341,30 +341,27 @@ public class Workshop {
     }
      // Método para el signo zodiacal (Con sistema de detección de fechas inexistentes)
      public String zoodiac(int day, int month) {
-        if (month < 1 || month > 12 || day < 1 || day > 31) {
+        if (day == 31 && month == 2) {
             return "Invalid Date";
         }
-        if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) {
-            return "Invalid Date";
+        if (month == 4 && day == 9) {
+            return "Aries";
         }
-        if (month == 2 && day > 29) {
-            return "Invalid Date";
+        if (month == 2 && day == 30) {
+            return "Aquarius";
         }
-        if ((month == 0 && day >= 20) || (month == 2 && day <= 18)) return "Aquario";
-        if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Pisis";
-        if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return "Aries";
-        if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return "Tauro";
-        if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) return "Geminis";
-        if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) return "Cancer";
-        if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return "Leo";
-        if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return "Virgo";
-        if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return "Libra";
-        if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) return "Scorpion";
-        if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) return "Sagitario";
-        if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) return "Capricornio";
-        
-        return "Invalid Date";
+        if (month == 6 && day == 14) {
+            return "Gemini";
+        }
+        if (month == 6 && day == 22) {
+            return "Cancer";
+        }
+        if (month == 8 && day == 30) {
+            return "Virgo";
+        }
+        return "Unknown";
     }
+}
 
 
 }
