@@ -269,36 +269,37 @@ public class Workshop {
         return cadena.replace(antiguaSubcadena, nuevaSubcadena);
     }
 
-    // Método que busca una subcadena en una cadena y retorna su índice
     public int buscarSubcadena(String cadena, String subcadena) {
+        if (cadena == null || subcadena == null) return -1;
         return cadena.indexOf(subcadena);
     }
 
-    // Método que valida un correo electrónico
+    // Método que valida un correo electrónico (Corregido con doble barra \\.)
     public boolean validarCorreoElectronico(String correo) {
-        return correo.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$");
+        if (correo == null) return false;
+        return correo.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
     }
 
-    // Método que calcula el promedio de una lista de números
-
-    Método que calcula el promedio de una lista de números
+    // Método que calcula el promedio de una lista de números (Corregido error de texto suelto)
     public double promedioLista(List<Integer> lista) {
-        if (lista.isEmpty()) return 0.0;
+        if (lista == null || lista.isEmpty()) return 0.0;
         return lista.stream().mapToDouble(Integer::doubleValue).average().orElse(0.0);
     }
 
-    // Método que convierte un número en su representación binaria
+    // Método que convierte un número en su representación binaria con signo manual
     public String convertirABinario(int numero) {
-        // TODO: Implementar el método para convertir un número en su representación binaria.
-        // Ejemplo: Si numero = 10, el resultado debería ser "1010".
-        return "";
+        if (numero == 0) return "0";
+        boolean isNegative = numero < 0;
+        String binary = Integer.toBinaryString(Math.abs(numero));
+        return isNegative ? "-" + binary : binary;
     }
 
-    // Método que convierte un número en su representación hexadecimal
+    // étodo que convierte un número en su representación hexadecimal con signo manual
     public String convertirAHexadecimal(int numero) {
-        // TODO: Implementar el método para convertir un número en su representación hexadecimal.
-        // Ejemplo: Si numero = 255, el resultado debería ser "FF".
-        return "";
+        if (numero == 0) return "0";
+        boolean isNegative = numero < 0;
+        String hex = Integer.toHexString(Math.abs(numero)).toUpperCase();
+        return isNegative ? "-" + hex : hex;
     }
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
