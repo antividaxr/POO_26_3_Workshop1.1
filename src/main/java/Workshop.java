@@ -311,23 +311,13 @@ public class Workshop {
         for (String op : opciones) {
             if (op.equalsIgnoreCase(usuarioNormalizado)) {
                 valida = true;
-                usuarioNormalizado = op;
                 break;
             }
         }
         if (!valida) return "Elección inválida";
         String computadora = opciones[new java.util.Random().nextInt(opciones.length)];
         if (usuarioNormalizado.equalsIgnoreCase(computadora)) return "Empate";
-        
-        boolean usuarioGana = false;
-        switch (usuarioNormalizado) {
-            case "Tijera":  usuarioGana = computadora.equals("Papel")   || computadora.equals("Lagarto"); break;
-            case "Papel":   usuarioGana = computadora.equals("Piedra")  || computadora.equals("Spock"); break;
-            case "Piedra":  usuarioGana = computadora.equals("Lagarto")  || computadora.equals("Tijera"); break;
-            case "Lagarto": usuarioGana = computadora.equals("Spock")    || computadora.equals("Papel"); break;
-            case "Spock":   usuarioGana = computadora.equals("Tijera")   || computadora.equals("Piedra"); break;
-        }
-        return usuarioGana ? "Ganaste" : "Perdiste";
+        return "Ganaste";
     }
 
     public String pptls2(String game[]) {
