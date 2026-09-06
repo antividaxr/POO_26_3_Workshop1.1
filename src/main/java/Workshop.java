@@ -5,20 +5,19 @@ public class Workshop {
 
     }
 
-    // Método que suma dos números enteros
+    //1.Método que suma dos números enteros
     public int sumarDosNumeros(int a, int b) {
         return a + b;
     }
 
-    // Método que encuentra el mayor de tres números enteros
+    //2.Método que encuentra el mayor de tres números enteros
     public int mayorDeTresNumeros(int a, int b, int c) {
-       public int mayorDeTresNumeros(int a, int b, int c) {
         if (a >= b && a >= c) return a;
         if (b >= c) return b;
         return c;
     }
 
-    // Método que retorna la tabla de multiplicar de un número
+    //3.Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
         int[] resultado = new int[limite];
         for (int r = 0; r < limite; r++) {
@@ -27,7 +26,7 @@ public class Workshop {
         return resultado;
     }
 
-    // Método que calcula el factorial de un número entero
+    //4.Método que calcula el factorial de un número entero
     public int factorial(int n) {
          if (n < 0) {
             throw new IllegalArgumentException();
