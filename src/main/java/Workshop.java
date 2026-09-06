@@ -304,18 +304,30 @@ public class Workshop {
 
     // Método para el juego de piedra, papel, tijera, lagarto, Spock
     public String jugarPiedraPapelTijeraLagartoSpock(String eleccionUsuario) {
-        // TODO: Implementar el método para el juego de Piedra, Papel, Tijera, Lagarto, Spock.
-        // Las reglas del juego son:
-        // - Piedra vence a Tijera y Lagarto
-        // - Papel vence a Piedra y Spock
-        // - Tijera vence a Papel y Lagarto
-        // - Lagarto vence a Spock y Papel
-        // - Spock vence a Tijera y Piedra
-
-
-        // El método debe retornar un mensaje indicando el resultado del juego.
-        // Ejemplo: Si la eleccionUsuario es "Piedra", el resultado podría ser "Ganaste" o "Perdiste" dependiendo de la elección de la computadora.
-        return "";
+        if (eleccionUsuario == null) return "Elección inválida";
+        String[] opciones = {"Piedra", "Papel", "Tijera", "Lagarto", "Spock"};
+        String usuarioNormalizado = eleccionUsuario.trim();
+        boolean valida = false;
+        for (String op : opciones) {
+            if (op.equalsIgnoreCase(usuarioNormalizado)) {
+                valida = true;
+                usuarioNormalizado = op;
+                break;
+            }
+        }
+        if (!valida) return "Elección inválida";
+        String computadora = opciones[new java.util.Random().nextInt(opciones.length)];
+        if (usuarioNormalizado.equalsIgnoreCase(computadora)) return "Empate";
+        
+        boolean usuarioGana = false;
+        switch (usuarioNormalizado) {
+            case "Tijera":  usuarioGana = computadora.equals("Papel")   || computadora.equals("Lagarto"); break;
+            case "Papel":   usuarioGana = computadora.equals("Piedra")  || computadora.equals("Spock"); break;
+            case "Piedra":  usuarioGana = computadora.equals("Lagarto")  || computadora.equals("Tijera"); break;
+            case "Lagarto": usuarioGana = computadora.equals("Spock")    || computadora.equals("Papel"); break;
+            case "Spock":   usuarioGana = computadora.equals("Tijera")   || computadora.equals("Piedra"); break;
+        }
+        return usuarioGana ? "Ganaste" : "Perdiste";
     }
 
     public String pptls2(String game[]) {
