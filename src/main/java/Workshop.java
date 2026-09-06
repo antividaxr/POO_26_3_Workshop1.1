@@ -350,7 +350,7 @@ public class Workshop {
         if (month == 2 && day > 29) {
             return "Invalid Date";
         }
-        if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Aquario";
+        if ((month == 0 && day >= 20) || (month == 2 && day <= 18)) return "Aquario";
         if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Pisis";
         if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) return "Aries";
         if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) return "Tauro";
