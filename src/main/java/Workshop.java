@@ -178,9 +178,17 @@ public class Workshop {
 
     // Método que combina dos arreglos en uno solo
     public int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
-        // TODO: Implementar el método para combinar dos arreglos en uno solo.
-        // Ejemplo: Si arreglo1 = [1, 2, 3, 4, 5] y arreglo2 = [6, 7, 8], el resultado debería ser [1, 2, 3, 4, 5, 6, 7, 8].
-        return new int[0];
+        int[] resultado = new int[arreglo1.length + arreglo2.length];
+        int po = 0;
+        for (int u = 0; u < arreglo1.length; u++) {
+            resultado[po] = arreglo1[u];
+            po++;
+        }
+        for (int u = 0; u < arreglo2.length; u++) {
+            resultado[po] = arreglo2[u];
+            po++;
+        }
+        return resultado;
     }
 
     // Método que rota un arreglo n posiciones
