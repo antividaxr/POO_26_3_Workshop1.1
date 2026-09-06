@@ -5,19 +5,19 @@ public class Workshop {
 
     }
 
-    //1.Método que suma dos números enteros
+    // Método que suma dos números enteros
     public int sumarDosNumeros(int a, int b) {
         return a + b;
     }
 
-    //2.Método que encuentra el mayor de tres números enteros
+    // Método que encuentra el mayor de tres números enteros
     public int mayorDeTresNumeros(int a, int b, int c) {
         if (a >= b && a >= c) return a;
         if (b >= c) return b;
         return c;
     }
 
-    //3.Método que retorna la tabla de multiplicar de un número
+    // Método que retorna la tabla de multiplicar de un número
     public int[] tablaMultiplicar(int numero, int limite) {
         int[] resultado = new int[limite];
         for (int r = 0; r < limite; r++) {
@@ -26,7 +26,7 @@ public class Workshop {
         return resultado;
     }
 
-    //4.Método que calcula el factorial de un número entero
+    // Método que calcula el factorial de un número entero
     public int factorial(int n) {
          if (n < 0) {
             throw new IllegalArgumentException();
@@ -40,9 +40,15 @@ public class Workshop {
 
     // Método que verifica si un número es primo
     public boolean esPrimo(int numero) {
-        // TODO: Implementar el método para verificar si un número es primo.
-        // Ejemplo: Si numero = 7, el resultado debería ser true.
-        return false;
+        if (numero <= 1) {
+            return false;
+        }
+        for (int p = 2; p * p <= numero; p++) {
+            if (numero % p == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     // Método que genera una serie de Fibonacci
