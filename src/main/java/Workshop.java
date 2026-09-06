@@ -191,20 +191,19 @@ public class Workshop {
         return resultado;
     }
 
-    // Método que rota un arreglo n posiciones (Dirección ajustada al test)
+    // Método que rota un arreglo n posiciones
     public int[] rotarArreglo(int[] arreglo, int posiciones) {
-        if (arreglo.length == 0) {
-            return arreglo;
-        }
+        if (arreglo == null || arreglo.length == 0) return arreglo;
         int n = arreglo.length;
-        posiciones = ((-posiciones % n) + n) % n;
+        posiciones = posiciones % n;
+        if (posiciones < 0) posiciones += n;
         int[] resultado = new int[n];
-        for (int e = 0; e < n; e++) {
-            resultado[(e + posiciones) % n] = arreglo[e];
+        for (int i = 0; i < n; i++) {
+            resultado[(i + posiciones) % n] = arreglo[i];
         }
         return resultado;
     }
-
+ 
     // Método que cuenta los caracteres en una cadena
     public int contarCaracteres(String cadena) {
         return cadena.length();
