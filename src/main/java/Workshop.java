@@ -308,25 +308,21 @@ public class Workshop {
     }
 
     public String pptls2(String game[]) {
-        //Retornar player ganador o empate
-            /*
-            Rock = R
-            Paper = P
-            Scissors = S
-            Lizard = L
-            Spock = V
-        Scissors cuts Paper
-Paper covers Rock
-Rock crushes Lizard
-Lizard poisons Spock
-Spock smashes Scissors
-Scissors decapitates Lizard
-Lizard eats Paper
-Paper disproves Spock
-Spock vaporizes Rock
-Rock crushes Scissors
-         */
-        return "";
+        30. Método para el juego PPTLS (versión con abreviaturas)
+    public String pptls2(String[] game) {
+        if (game == null || game.length < 2) return "Empate";
+        String p1 = game[0] != null ? game[0].trim().toUpperCase() : "";
+        String p2 = game[1] != null ? game[1].trim().toUpperCase() : "";
+        if (p1.equals(p2)) return "Empate";
+        boolean p1Gana = false;
+        switch (p1) {
+            case "S": p1Gana = p2.equals("P") || p2.equals("L"); break;
+            case "P": p1Gana = p2.equals("R") || p2.equals("V"); break;
+            case "R": p1Gana = p2.equals("L") || p2.equals("S"); break;
+            case "L": p1Gana = p2.equals("V") || p2.equals("P"); break;
+            case "V": p1Gana = p2.equals("S") || p2.equals("R"); break;
+        }
+        return p1Gana ? "Player 1" : "Player 2";
     }
 
     public double areaCirculo(double radio) {
