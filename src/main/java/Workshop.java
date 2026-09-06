@@ -230,7 +230,7 @@ public class Workshop {
         }
 
         return new StringBuilder(cadena).reverse().toString();
-
+    }
     // Método que verifica si una cadena es un palíndromo
     public boolean esPalindromo(String cadena) {
         String clean = cadena.toLowerCase().replaceAll("[^a-z0-9]", "");
